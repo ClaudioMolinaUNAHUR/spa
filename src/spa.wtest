@@ -1,0 +1,21 @@
+import spa.*
+import personas.*
+
+test "Ramiro se atiende" {
+	const contractura = ramiro.contractura()
+	spa.atender(ramiro)
+	assert.that(ramiro.contractura() <= contractura )
+	assert.notThat(ramiro.pielGrasosa())
+}
+
+test "bruno se atiende" {
+	spa.atender(bruno)
+	assert.that(bruno.esFeliz())
+	assert.notThat(!bruno.tieneSed())
+}
+
+test "olivia se atiende" {
+	const concentracion = olivia.gradoDeConcentracion()
+	spa.atender(olivia)
+	assert.that(olivia.gradoDeConcentracion() >= concentracion)
+}
